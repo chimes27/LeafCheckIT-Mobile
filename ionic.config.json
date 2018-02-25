@@ -1,0 +1,8 @@
+{
+  "name": "leafcheckit",
+  "app_id": "6dd571b8",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
