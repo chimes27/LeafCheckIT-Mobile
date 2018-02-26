@@ -1,18 +1,39 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>LeafCheckIT</ion-title>
+    <ion-buttons end>
+    	<button (click)="presentWalkthroughModal()" ion-button icon-left>
+		<ion-icon name="md-bulb"></ion-icon>
+		Tutorial</button>
+	</ion-buttons>	
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
+<ion-card>
+	<ion-card-header>
+		<h1>What is LeafCheckIT?</h1>
+	</ion-card-header>
+	<ion-card-content>
+		<p>
+		<em class="title">LeafCheckIT</em> is an intelligent web application that can be used to analyze and predict macronutrient deficiency on a Banana crop using image processing and machine learning technologies. The application accepts banana leaf images from the user and analyze it to predict whether the crop has <em>Nitrogen (N), Phosphorus (P) and Potassium (K) deficiency</em>, the nutrients needed in order for it to fully grow and produce fruit.</p>
+		<img src="images/plants.jpg">
+		<p>
+		Nutrients are essential substance in foods that give nourishment to all organisms, including plants in order for them to live, grow and reproduce [1]. Right combination of nutrients in order for them to yield bountiful harvest. The sources of these nutrients can be air, water, soil, fertilizer and animal manure. The main nutrients that plants need in order to generate food are carbon as carbon dioxide from air and hydrogen and oxygen as H2O or water. The nutrients that can be derived from soil, fertilizer and animal manure are composed of thirteen elements and are quantitatively divided quantitatively into two categories: macronutrient and micronutrient [2].
+		</p>
+		<img src="images/nutrients-plants-elements.jpg">
+		<p>
+		Macronutrient is a type of elements needed in large amounts is classified into primary and secondary nutrients. The primary nutrients are nitrogen, phosphorus and potassium and are the most frequently required in a crop fertilization program [3]. The secondary nutrients are calcium, magnesium and sulfur. Usually enough of these nutrients can be found naturally in soil and not always need in fertilization [4].
+		</p>
+		<p>
+		Micronutrients, on the other hand are known as trace elements for they are used in very small amounts. Nutrients under this classification are boron, chlorine, copper, iron, manganese, molybdenum and zinc [2].
+		</p>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+	</ion-card-content>
+</ion-card>
+  
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>

@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button menuToggle *ngIf="!selectedItem">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Nutrient Details</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content *ngIf="selectedItem">
+    <ion-card>
+      <ion-card-header>
+        <h1 color="primary">{{selectedItem.title}}</h1>
+      </ion-card-header>
+      
+    <ion-card-content>
+      <h2 color="primary">Importance of {{selectedItem.title}} on Plant Nutrition</h2>
+      <p>
+      {{selectedItem.desc}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      <h2 color="primary">{{selectedItem.title}} Deficiency Symptoms</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{selectedItem.syn}}</p>
+    </ion-card-content>
+    </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      <h2 color="primary">Deficiency Gallery</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ul *ngFor="let image of selectedItem.image ">
+        <li (click)="clicked()"><img src="{{image}}"></li>
+      </ul>
+    </ion-card-content>
+  
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      <h2 color="primary">References</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ul *ngFor="let ref of selectedItem.ref">
+        <li>{{ref}}</li>
+      </ul>
+    </ion-card-content>
+    </ion-card>
+  
+  </ion-content>
+  

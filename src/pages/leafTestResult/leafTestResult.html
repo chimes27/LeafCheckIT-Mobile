@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>Test Result</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-card>
+      <ion-card-header>
+        <h1 color="primary">The result is: {{items.classifierResult}}</h1>
+      </ion-card-header>
+      
+  
+    <ion-card-content>
+      <h2 color="primary">Description</h2>
+      <p>
+      {{items.desc}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      <h2 color="primary">Sample images of this classification</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li><img data-src="{{items.img1}}"></li><br/><br/>
+        <li><img data-src="{{items.img2}}"></li><br/><br/>
+        <li><img data-src="{{items.img3}}"></li><br/><br/>
+      </ul>
+    </ion-card-content>
+  
+  </ion-card>
+  
+  
+  </ion-content>
+  

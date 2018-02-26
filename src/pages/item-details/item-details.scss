@@ -1,0 +1,26 @@
+page-item-details {
+	h2{
+		padding: 10px;
+	}
+	p{
+		padding: 10px;
+		text-align: justify;
+	}
+	.slides{
+		width: 50%;
+		height: 50%;
+		margin: 0 auto;
+	}
+	.title{
+		color: blue;
+	}
+	ul li{
+		list-style: none;
+	}
+	ul li img{
+		height: 50%;
+		width: 50%;
+		float: left;
+		margin: 10px;
+	}
+}

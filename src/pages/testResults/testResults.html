@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>View Previous Test Results</ion-title>
+      <ion-buttons end>
+          <button (click)="presentWalkthroughModal()" ion-button icon-left color="primary">
+          <ion-icon name="md-bulb"></ion-icon>
+          Tutorial</button>
+      </ion-buttons>	
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+  <ion-card padding>
+    <h1>Test results masterlist</h1>
+    <p *ngIf="flag">No items to show. Please login to your LeafCheckIT account or signup to continue.</p>
+    <ion-row *ngFor="let item of dispData">
+      <ion-col>
+        <h2 color="primary">{{item.category}}</h2>
+        <img src="{{item.image}}" />
+  
+        <button (click)="delete(item.id)" ion-button icon-left small><ion-icon name="md-trash"></ion-icon>Delete</button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  </ion-content>
+  

@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  
+     <ion-title class="title">Account</ion-title>
+   
+      <ion-buttons end>
+          <button ion-button icon-left text-lowercase (click)="SignUp()" *ngIf="!flag">
+              <ion-icon name="md-person-add"></ion-icon>SignUp
+          </button>
+          <button ion-button icon-left text-lowercase (click)="LogIn()" *ngIf="!flag">
+              <ion-icon name="ios-contact"></ion-icon>Login
+          </button>
+        <button ion-button icon-left text-lowercase (click)="Logout()" *ngIf="flag">
+          <ion-icon name="ios-contact"></ion-icon>Logout
+        </button>
+      </ion-buttons>
+   
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+  
+    <ion-card>
+      <ion-card-header>
+        <h1>Account Information</h1>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list *ngIf="flag">
+          <ion-item *ngFor='let item of details'>
+            <p>Account Name: {{item.firstName}} {{item.lastName}}</p>
+            <p>Email: {{item.email}}</p>
+          </ion-item>
+        </ion-list>
+        <ion-list *ngIf="!flag">
+          <p>Please create an account or login view account information and continue.</p>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  
+  </ion-content>

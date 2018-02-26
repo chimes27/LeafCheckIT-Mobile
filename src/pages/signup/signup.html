@@ -1,0 +1,31 @@
+<ion-content>
+	<ion-card>
+		<ion-card-header>
+			<h1>SignUp</h1>
+		</ion-card-header>
+		<ion-card-content>
+			<p></p>
+			<ion-list>
+
+			  <ion-item>
+			    <ion-input type="text" [(ngModel)]="postData.firstName" placeholder="First Name" name="firstName"></ion-input>
+			  </ion-item>
+			  <ion-item>
+			    <ion-input type="text" [(ngModel)]="postData.lastName" placeholder="Last Name" name="lastName"></ion-input>
+			  </ion-item>
+			  <ion-item>
+			    <ion-input type="email" [(ngModel)]="postData.email" placeholder="Email" name="email"></ion-input>
+			  </ion-item>
+
+			  <ion-item>
+			    <ion-input type="password" [(ngModel)]="postData.password" placeholder="Password" name="password"></ion-input>
+			  </ion-item>
+			</ion-list>
+			<div padding>
+    			<button ion-button color="primary" block (click)="signUp()">Create Account</button>
+    			<button ion-button (click)="dismiss()" block>Cancel</button>
+  			</div>
+
+		</ion-card-content>
+	</ion-card>
+</ion-content>
