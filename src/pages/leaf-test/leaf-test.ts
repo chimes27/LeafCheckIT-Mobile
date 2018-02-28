@@ -33,13 +33,14 @@ export class LeafTestPage {
   message: string;
   dispData: any;
   auth: any;
+  
 
   images: string[][];
 
   postData={}
   options: any;
  
-  constructor(private http:HttpClient, private camera: Camera, private navCtrl: NavController, private _DomSanitizer: DomSanitizer, public storage: Storage, public alertCtrl: AlertController, public loading: LoadingController, public modalCtrl: ModalController) {
+  constructor(private http:HttpClient, private camera: Camera, private _DomSanitizer: DomSanitizer, private navCtrl: NavController, public storage: Storage, public alertCtrl: AlertController, public loading: LoadingController, public modalCtrl: ModalController) {
     this.storage.get('flag').then((val) => {
         this.flag = val;
         this.imageFlag = val;

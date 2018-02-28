@@ -19,7 +19,7 @@
     <ion-row *ngFor="let item of dispData">
       <ion-col>
         <h2 color="primary">{{item.category}}</h2>
-        <img src="{{item.image}}" />
+        <img src="{{item.image}}"  imageViewer/>
   
         <button (click)="delete(item.id)" ion-button icon-left small><ion-icon name="md-trash"></ion-icon>Delete</button>
       </ion-col>

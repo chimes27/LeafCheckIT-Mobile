@@ -15,11 +15,13 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import {LeafTestPage} from '../pages/leaf-test/leaf-test';
 import {LeafTestResultPage} from '../pages/leafTestResult/leafTestResult';
 import { TestResultsPage } from '../pages/testResults/testResults';
+import {WalkthroughLeafTestPage} from '../pages/walkthroughLeafTest/walkthroughLeafTest'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {IonicStorageModule} from '@ionic/storage';
 import {Camera} from '@ionic-native/camera';
+import {IonicImageViewerModule} from 'ionic-img-viewer';
 
 
 @NgModule({
@@ -34,12 +36,14 @@ import {Camera} from '@ionic-native/camera';
     ItemDetailsPage,
     LeafTestPage,
     LeafTestResultPage,
-    TestResultsPage
+    TestResultsPage,
+    WalkthroughLeafTestPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
+    IonicImageViewerModule,
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
@@ -54,7 +58,8 @@ import {Camera} from '@ionic-native/camera';
     ItemDetailsPage,
     LeafTestPage,
     LeafTestResultPage,
-    TestResultsPage
+    TestResultsPage,
+    WalkthroughLeafTestPage
   ],
   providers: [
     StatusBar,
