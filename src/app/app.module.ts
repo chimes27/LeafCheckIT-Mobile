@@ -23,7 +23,6 @@ import {IonicStorageModule} from '@ionic/storage';
 import {Camera} from '@ionic-native/camera';
 import {IonicImageViewerModule} from 'ionic-img-viewer';
 
-
 @NgModule({
   declarations: [
     MyApp,

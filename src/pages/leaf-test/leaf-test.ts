@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Camera } from '@ionic-native/camera';
 import {NavController, AlertController, LoadingController, ModalController} from 'ionic-angular';
-import {DomSanitizer} from '@angular/platform-browser';
 import {Storage} from '@ionic/storage';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+
 
 import { WalkthroughLeafTestPage } from '../walkthroughLeafTest/walkthroughLeafTest';
 import {LeafTestResultPage} from '../leafTestResult/leafTestResult';
@@ -40,7 +40,7 @@ export class LeafTestPage {
   postData={}
   options: any;
  
-  constructor(private http:HttpClient, private camera: Camera, private _DomSanitizer: DomSanitizer, private navCtrl: NavController, public storage: Storage, public alertCtrl: AlertController, public loading: LoadingController, public modalCtrl: ModalController) {
+  constructor(private http:HttpClient, private camera: Camera, private navCtrl: NavController, public storage: Storage, public alertCtrl: AlertController, public loading: LoadingController, public modalCtrl: ModalController) {
     this.storage.get('flag').then((val) => {
         this.flag = val;
         this.imageFlag = val;
@@ -133,7 +133,7 @@ export class LeafTestPage {
     formData.append('image', this.imageName);
     formData.append('user', this.user); 
 
-    this.http.post<any>("http://192.168.22.5/api-imageUpload", formData, {headers: headers}).subscribe(res => {
+    this.http.post<any>("http://leafcheckit.pythonanywhere.com/api-imageUpload", formData, {headers: headers}).subscribe(res => {
       if(res){
         this.loader.dismiss();
         

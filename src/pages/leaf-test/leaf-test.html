@@ -15,7 +15,7 @@
   <ion-content padding class="leaf-test-home">
   <ion-list>
     <ion-item *ngIf="flag" class="placeholder">
-        <img [src]="_DomSanitizer.bypassSecurityTrustUrl(imageURL)" *ngIf="photoTaken">
+        <img [src]="imageURL" *ngIf="photoTaken">
         <img [src]="imageURL" *ngIf="photoSelected">
     </ion-item>
     <ion-item *ngIf="imageFlag" class="btn-group">

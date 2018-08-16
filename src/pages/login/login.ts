@@ -36,9 +36,8 @@ export class LoginModalPage {
       });
 
       this.loader.present().then(() => {
-        this.http.post<any>("http://192.168.22.5/api-token-auth", this.postData, {headers: this.headers})
+        this.http.post<any>("http://leafcheckit.pythonanywhere.com/api-token-auth", this.postData, {headers: this.headers})
         .subscribe(res => {         
-            console.log(res);
             var token = res['token'];
             var auth = "Token " + token;
             this.flag = true;
@@ -55,7 +54,7 @@ export class LoginModalPage {
             this.showAlert();
           }else{
             this.loader.dismiss();
-            this.msg =  'Opps. An error occured. Please check youri nternet connectivity and try again..';
+            this.msg =  'Opps. An error occured. Please check your internet connectivity and try again..';
             this.title = 'Error';
             this.showAlert();
           }

@@ -36,7 +36,7 @@ export class TestResultsPage {
 
 
           loader.present().then(() => {
-        		this.http.get<any>("http://192.168.22.5/api-gettestResults", {headers: this.headers})
+        		this.http.get<any>("http://leafcheckit.pythonanywhere.com/api-gettestResults", {headers: this.headers})
               .subscribe(data =>{
 
                 this.category = data['category'];
@@ -66,7 +66,7 @@ export class TestResultsPage {
     
   
     loader.present().then(()=>{
-      this.http.post<any>("http://192.168.22.5/api-deleteTestResults", id , {headers: this.headers})
+      this.http.post<any>("http://leafcheckit.pythonanywhere.com/api-deleteTestResults", id , {headers: this.headers})
       .subscribe(data =>{
             console.log(data);
             loader.dismiss();

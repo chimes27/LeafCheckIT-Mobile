@@ -1,19 +1,41 @@
 import { Component } from '@angular/core';
-import {ViewController, App} from 'ionic-angular';
+//import { IonicPage} from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { NavController, AlertController, ViewController } from 'ionic-angular';
+import { App } from 'ionic-angular/components/app/app';
+
+//import { ViewController } from 'ionic-angular/navigation/view-controller';
+
 
 @Component({
   templateUrl: 'walkthrough.html',
   selector: 'walkthrough'
 })
 export class WalkthroughModalPage {
+  msg: string;
+  
 
-  constructor(private viewCtrl: ViewController, private app:App) {
+  constructor(public app: App, public navCtrl: NavController, public alertCtrl: AlertController) {
   }
 
-  dismiss(data) {
-    this.viewCtrl.dismiss(data);
-    this.app.getRootNav().setRoot(HomePage);
+  dismiss() {
+    this.app.getRootNav().setRoot(HomePage).then(()=>{
+    }).catch(err => {
+      this.msg = err;
+    });
+    
+   
+  }
+
+
+  showAlert(){
+    let alert = this.alertCtrl.create({
+        title: 'Error',
+        subTitle: this.msg,
+        buttons: ['OK']
+      })
+      alert.present();
+    
   }
 
 }

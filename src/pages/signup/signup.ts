@@ -33,7 +33,7 @@ export class SignUpModalPage {
       });
 
       this.loader.present().then(() => {
-        this.http.post<any>("http://192.168.22.5/api-user-create", this.postData, {headers: this.headers})
+        this.http.post<any>("http://leafcheckit.pythonanywhere.com/api-user-create", this.postData, {headers: this.headers})
         .subscribe(res => {         
             if(res['id']){
                 this.msg = 'Your account has been created. Please login to your account to continue';
@@ -47,7 +47,7 @@ export class SignUpModalPage {
             this.title = 'Error';
             this.showAlert();
           }else{
-            this.msg =  'Opps. An error occured. Please check youri nternet connectivity and try again..';
+            this.msg =  'Opps. An error occured. Please check your internet connectivity and try again..';
             this.title = 'Error';
             this.showAlert();
           }

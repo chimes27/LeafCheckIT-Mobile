@@ -56,7 +56,7 @@ export class AccountPage {
   DisplayUser(){
     this.storage.get('auth').then((val) => {
         const headers = new HttpHeaders().set('Authorization', val);
-        this.http.get<any>("http://192.168.22.5/api-get-user", {headers})
+        this.http.get<any>("http://leafcheckit.pythonanywhere.com/api-get-user", {headers})
         .subscribe(data => {
             this.details=[]
 

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Storage} from '@ionic/storage'
@@ -9,6 +9,7 @@ import { AccountPage } from '../pages/account/account';
 import {DeficiencyListPage} from '../pages/deficiency-list/deficiency-list'
 import { LeafTestPage } from '../pages/leaf-test/leaf-test';
 import { TestResultsPage } from '../pages/testResults/testResults';
+import {WalkthroughModalPage} from '../pages/walkthrough/walkthrough';
 
 
 
@@ -16,13 +17,13 @@ import { TestResultsPage } from '../pages/testResults/testResults';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
-
-  rootPage: any = HomePage;
+    @ViewChild(Nav) nav: Nav;
+    public rootPage: any = HomePage;
+ 
 
   pages: Array<{title: string, component: any, icon: string}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public storage: Storage) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public storage: Storage, public menu: MenuController) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -43,12 +44,25 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.storage.set('flag', false);
+
+      this.storage.get('introShown').then((result)=>{
+        if(result){
+          this.rootPage = HomePage;
+          this.storage.set('introShown', true);
+        }else{
+          this.rootPage = WalkthroughModalPage;
+          this.storage.set('introShown', true);        
+        }
+      });
     });
   }
 
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
+
+    // navigate to the new page if it is not the current page
+    this.menu.close();
     this.nav.setRoot(page.component);
   }
 }
